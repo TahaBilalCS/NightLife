@@ -1,0 +1,45 @@
+p {
+  color: white;
+}
+
+/* We set outline to none so that we don't create blue borders when right clicking in game */
+#reflex-io {
+  border: 1px solid black;
+  margin: auto;
+  display: block;
+  outline: none;
+  background-color: white;
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0px auto;
+  width: 700px;
+  height: 50px;
+}
+
+body,
+head,
+* {
+  outline: none;
+  background-color: black;
+}
+
+button {
+  margin: 0px auto;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+  color: white;
+  margin: 10px auto;
+  font-size: 25px;
+}

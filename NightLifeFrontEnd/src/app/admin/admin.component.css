@@ -1,0 +1,16 @@
+/* Since I made the app "dark mode", I set the font color to white instead of default black*/
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+div {
+  color: white;
+}
+
+ul {
+  color: white;
+}
