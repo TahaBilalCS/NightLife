@@ -6,7 +6,7 @@ and their high score is then updated on their account.
 The admin can then see the updated scores of all the users that are registered on the website. 
 
 ## Front End
-**AngularJS** and **TypeScript** was used to design the front end with material UI. 
+**Angular** was used to design the front end with material UI. 
 
 Demonstration of Angular forms for proper form validation when registering a user:
 <img src="https://github.com/TahaBilalCS/NightLife/blob/master/demo/register.gif"/>
