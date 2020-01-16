@@ -1,6 +1,6 @@
 # NightLife
 NightLife is a scalable project I created using material I learned from an Intro to Full Stack course at VT. 
-Designed with MVC architecture, I wanted this website to be a basis for my future projects. 
+I wanted this website to be a home for my future projects.  
 This first iteration allows users to register their unique account in the database and login. Everyone then gets to play a game of mine 
 and their high score is then updated on their account. 
 The admin can then see the updated scores of all the users that are registered on the website. 
