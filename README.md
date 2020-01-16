@@ -34,7 +34,7 @@ tab is not visible to regular users.
 ## Final Thoughts
 This project helped me understand the complexity of web security. Knowing the difference between a GET and POST request is
 fundamental to passing data securely through a website. There is always much to learn but this served as a solid
-foundation to Full Stack Web Dev.
+foundation to Full Stack Web Developer
 
 # Author
 **Bilal Taha**
