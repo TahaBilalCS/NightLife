@@ -1,12 +1,13 @@
 # NightLife
 NightLife is a scalable project I created using material I learned from an Intro to Full Stack course at VT. 
-Designed with MVC architecture, I wanted this website to be a basis for my future projects. 
+I wanted this website to be a home for my future projects.  
+<br>
 This first iteration allows users to register their unique account in the database and login. Everyone then gets to play a game of mine 
 and their high score is then updated on their account. 
 The admin can then see the updated scores of all the users that are registered on the website. 
 
 ## Front End
-**AngularJS** and **TypeScript** was used to design the front end with material UI. 
+**Angular** was used to design the front end with material UI. 
 
 Demonstration of Angular forms for proper form validation when registering a user:
 <img src="https://github.com/TahaBilalCS/NightLife/blob/master/demo/register.gif"/>
@@ -33,7 +34,7 @@ tab is not visible to regular users.
 ## Final Thoughts
 This project helped me understand the complexity of web security. Knowing the difference between a GET and POST request is
 fundamental to passing data securely through a website. There is always much to learn but this served as a solid
-foundation to Full Stack Web Dev.
+foundation to becoming a Full Stack Web Developer
 
 # Author
 **Bilal Taha**
