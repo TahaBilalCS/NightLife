@@ -79,11 +79,11 @@ export class HomeComponent implements OnInit {
     (window.enemyTime = window.lastIteration = window.animation = window.timer = window.clickCount = 0),
       (window.scrollIndex = 2); // 2 is default Hard difficulty index
     // Update the game with given fps, default we do 144fps
-    var game = this.controlFps(144, e => {
+    let game = this.controlFps(144, e => {
       this.drawStats();
 
       // We calculate the time elapsed from each frame to the next to ensure the right player and enemy speed
-      var elapsed = e.time - window.lastIteration;
+      let elapsed = e.time - window.lastIteration;
       window.lastIteration = e.time;
       // Every loop we will move the player and enemies according to the desired fps with elapsed time during a loop
       this.movePlayer(elapsed);
@@ -112,13 +112,13 @@ export class HomeComponent implements OnInit {
   // We try to account for our calculations for time taken to compute next frame using delta time
   // Source: https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
   controlFps(fps, callback) {
-    var frameRate = 1000 / fps,
+    let frameRate = 1000 / fps,
       time = null,
       currentFrame = -1;
 
     function loop(milliseconds) {
       if (time === null) time = milliseconds; // Intial time
-      var segment = Math.floor((milliseconds - time) / frameRate); // This is the n-th frame
+      let segment = Math.floor((milliseconds - time) / frameRate); // This is the n-th frame
 
       // If we moved to next frame then update
       if (segment > currentFrame) {
@@ -225,9 +225,9 @@ export class HomeComponent implements OnInit {
 
   //Get the mouse position on the canvas
   getMousePos(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
-    var mouseX = evt.clientX - rect.left;
-    var mouseY = evt.clientY - rect.top;
+    let rect = canvas.getBoundingClientRect();
+    let mouseX = evt.clientX - rect.left;
+    let mouseY = evt.clientY - rect.top;
     return {
       x: mouseX,
       y: mouseY
@@ -275,19 +275,19 @@ export class HomeComponent implements OnInit {
 
   //Calculate the move speed of player and change their position according to the location clicked on
   movePlayer(time) {
-    var points = this.getAngleAndDistance(
+    let points = this.getAngleAndDistance(
       window.player[0],
       window.player[1],
       window.mousePosition.x,
       window.mousePosition.y
     );
-    var velocity = 300;
+    let velocity = 300;
 
     // Millisecond to second conversion
-    var elapsedSeconds = time / 1000;
+    let elapsedSeconds = time / 1000;
 
     // Find vector given velocity and angle between player and enemy
-    var toMouseVector = this.getVector(velocity, points.angle);
+    let toMouseVector = this.getVector(velocity, points.angle);
 
     // If the player is more than 5 pixels away from where we clicked, then move the player
     if (points.distance > 5) {
@@ -298,11 +298,11 @@ export class HomeComponent implements OnInit {
 
   // We draw each enemy at a random edge and push the enemy to the list
   renderEnemies() {
-    var randomStartX = 0;
-    var randomStartY = 0;
+    let randomStartX = 0;
+    let randomStartY = 0;
 
     // Pick a random edge out of the 4 options
-    var rand = Math.floor(Math.random() * 4);
+    let rand = Math.floor(Math.random() * 4);
 
     // Set the coordinate for an enemy based on which edge they spawn in
     switch (rand) {
@@ -349,9 +349,9 @@ export class HomeComponent implements OnInit {
     // For each enemy we will update their location and speed according to each frame interval
     window.enemies.forEach(p => {
       // Millisecond to second conversion
-      var elapsed = time / 1000;
-      var speedX = window.difficulty.speed * elapsed;
-      var speedY = window.difficulty.speed * elapsed;
+      let elapsed = time / 1000;
+      let speedX = window.difficulty.speed * elapsed;
+      let speedY = window.difficulty.speed * elapsed;
 
       // 0 is top edge
       // 1 is left edge
@@ -408,9 +408,9 @@ export class HomeComponent implements OnInit {
 
   // Calculate if player hits an enemy
   hitbox(p) {
-    var dx = p.x - window.player[0];
-    var dy = p.y - window.player[1];
-    var distance = Math.sqrt(dx * dx + dy * dy);
+    let dx = p.x - window.player[0];
+    let dy = p.y - window.player[1];
+    let distance = Math.sqrt(dx * dx + dy * dy);
 
     //Radius of player and enemies is 10, add them both together for collision
     if (distance < 20 && window.animation) {
@@ -420,7 +420,7 @@ export class HomeComponent implements OnInit {
       cancelAnimationFrame(window.animation);
 
       // Record the score and current difficulty and add the highscore to database for current user
-      var score =
+      let score =
         "Difficulty: " +
         window.difficulty.name +
         ", Time: " +
@@ -484,7 +484,7 @@ export class HomeComponent implements OnInit {
 
   // Calculate vector given velocity and angle
   getVector(velocity, angle) {
-    var angleRadians = (angle * Math.PI) / 180;
+    let angleRadians = (angle * Math.PI) / 180;
     return {
       magnitudeX: velocity * Math.cos(angleRadians),
       magnitudeY: velocity * Math.sin(angleRadians)
@@ -493,14 +493,14 @@ export class HomeComponent implements OnInit {
 
   // Get the distance and angle between two points
   getAngleAndDistance(x1, y1, x2, y2) {
-    var deltaX = x2 - x1,
+    let deltaX = x2 - x1,
       deltaY = y2 - y1;
 
     //Pythagorean Theorem
-    var pointDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    let pointDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-    var radians = Math.atan2(deltaY, deltaX);
-    var degrees = radians * (180 / Math.PI);
+    let radians = Math.atan2(deltaY, deltaX);
+    let degrees = radians * (180 / Math.PI);
 
     return {
       distance: Math.round(pointDistance),
