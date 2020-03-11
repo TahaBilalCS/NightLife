@@ -16,7 +16,7 @@ We only have the option to choose between admin and user for demonstrative purpo
 
 ## Back End
 
-The database and server management were done using **NodeJS** and **Mongoose**. 
+The database and server management were done using **NodeJS**(Mostly ExpressJS) and **Mongoose**. 
 
 Logging in with the wrong credentials triggers a notification:
 <img src="https://github.com/TahaBilalCS/NightLife/blob/master/demo/login.gif"/>
